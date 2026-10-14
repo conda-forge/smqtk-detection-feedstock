@@ -1,13 +1,13 @@
 {% set name = "smqtk-detection" %}
-{% set version = "0.23.0" %}
+{% set version = "0.24.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/smqtk_detection-{{ version }}.tar.gz
-  sha256: 089030d58dfb57ae0d0d8f6c4e6fab316da6973f6d7ab4e7f8655297bf6ef0e5
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/smqtk_detection-{{ version }}.tar.gz
+  sha256: 897d04b31a685486948f67b05b4fd53e9697eedfea4afe332c31ed80f7d2d8b3
 
 build:
   noarch: python
@@ -21,10 +21,16 @@ requirements:
     - poetry-core
   run:
     - python >={{ python_min }},<4.0
-    - smqtk-core >=0.20.0
-    - smqtk-classifier >=0.20.0
-    - smqtk-dataprovider >=0.19.0
-    - smqtk-image-io >=0.18.0
+    - numpy >=1.23.5
+    - smqtk-core >=0.22.0
+    - smqtk-classifier >=0.21.0
+    - smqtk-dataprovider >=0.20.0
+    - smqtk-image-io >=0.19.0
+  run_constrained:
+    - pytorch >=2.13.0
+    - torchvision >=0.28.0
+    - opencv >=4.10.0.84
+    - numba >=0.63.0
 
 test:
   imports:
