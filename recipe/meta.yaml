@@ -21,10 +21,16 @@ requirements:
     - poetry-core
   run:
     - python >={{ python_min }},<4.0
-    - smqtk-core >=0.20.0
-    - smqtk-classifier >=0.20.0
-    - smqtk-dataprovider >=0.19.0
-    - smqtk-image-io >=0.18.0
+    - numpy >=1.23.5
+    - smqtk-core >=0.22.0
+    - smqtk-classifier >=0.21.0
+    - smqtk-dataprovider >=0.20.0
+    - smqtk-image-io >=0.19.0
+  run_constrained:
+    - pytorch >=2.13.0
+    - torchvision >=0.28.0
+    - opencv >=4.10.0.84
+    - numba >=0.63.0
 
 test:
   imports:
